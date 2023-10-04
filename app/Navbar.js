@@ -8,7 +8,11 @@ const Navbar = () => {
   useEffect(() => {
     setIsDomLoaded(true);
     document.querySelectorAll(".logo-div").forEach((e) => {
-      e.innerHTML = `<img src="./logo192.png" />`;
+      if (document.body.className.split(" ").pop() === "dark-mode-variables") {
+        e.innerHTML = `<img src="./logo192_black.png" />`;
+      } else {
+        e.innerHTML = `<img src="./logo192.png" />`;
+      }
     });
   }, []);
 
